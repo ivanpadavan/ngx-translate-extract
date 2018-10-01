@@ -4,6 +4,7 @@ import { PipeParser } from '../parsers/pipe.parser';
 import { DirectiveParser } from '../parsers/directive.parser';
 import { ServiceParser } from '../parsers/service.parser';
 import { FunctionParser } from '../parsers/function.parser';
+import { FunctionArgParser } from '../parsers/function-arg.parser';
 import { CompilerInterface } from '../compilers/compiler.interface';
 import { CompilerFactory } from '../compilers/compiler.factory';
 
@@ -106,7 +107,8 @@ extract.setCompiler(compiler);
 const parsers: ParserInterface[] = [
 	new PipeParser(),
 	new DirectiveParser(),
-	new ServiceParser()
+	new ServiceParser(),
+	new FunctionArgParser(),
 ];
 if (cli.marker) {
 	parsers.push(new FunctionParser({
