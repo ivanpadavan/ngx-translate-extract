@@ -6,13 +6,15 @@
   "typings": "dist/index.d.ts",
   "files": [
     "bin/",
-    "dist/"
+    "dist/",
+    "src/"
   ],
   "bin": {
     "ngx-translate-extract": "bin/cli.js"
   },
   "scripts": {
     "build": "npm run clean && tsc",
+    "postinstall": "tsc",
     "watch": "npm run clean && tsc --watch",
     "clean": "rm -rf ./dist",
     "lint": "tslint --force './src/**/*.ts'",
